@@ -1,0 +1,14 @@
+<?xml  version="1.0"  encoding="UTF-8"?>
+<deposits>
+    <deposit>
+        <nameOfBank></nameOfBank>
+        <country></country>
+        <type></type>
+        <currencyType></currencyType>
+        <profitability></profitability>
+        <timeConstraints></timeConstraints>
+    </deposit>
+
+
+
+</deposits>
