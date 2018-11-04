@@ -1,7 +1,12 @@
 package com.epam.parsing.entity;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "SavingDeposit")
 public class SavingDeposit extends Deposit {
 
     @XmlElement(name = "capitalization")
@@ -9,14 +14,7 @@ public class SavingDeposit extends Deposit {
     @XmlElement(name = "cashOut")
     private boolean cashOut;
 
-    public SavingDeposit(String nameOfBank, String country, double profitability, int timeConstraints, String currencyType, double capitalization, boolean cashOut) {
-        super(nameOfBank, country, profitability, timeConstraints, currencyType);
-        this.capitalization = capitalization;
-        this.cashOut = cashOut;
-    }
-
     public SavingDeposit() {
-
     }
 
     public boolean isCashOut() {

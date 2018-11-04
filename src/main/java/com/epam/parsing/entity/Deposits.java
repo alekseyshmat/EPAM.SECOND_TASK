@@ -2,13 +2,19 @@ package com.epam.parsing.entity;
 
 import com.epam.parsing.entity.Deposit;
 
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Deposits {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "")
 
-    @XmlElement(name ="deposits")
+@XmlRootElement(name = "deposits")
+public class Deposits {
+  //  @XmlElementRef(name = "deposit", namespace = "http://www.example.com/deposits", type = JAXBElement.class)
+
+    @XmlElement(name = "listOfDeposits")
     private List<Deposit> listOfDeposits;
 
     public Deposits() {

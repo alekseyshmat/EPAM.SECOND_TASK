@@ -1,6 +1,12 @@
 package com.epam.parsing.entity;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "TimeDeposit")
 
 public class TimeDeposit extends Deposit {
 
@@ -9,11 +15,6 @@ public class TimeDeposit extends Deposit {
     @XmlElement(name = "onlineOpening")
     private boolean onlineOpening;
 
-    public TimeDeposit(String nameOfBank, String country, double profitability, int timeConstraints, String currencyType, double minimumSum, boolean onlineOpening) {
-        super(nameOfBank, country, profitability, timeConstraints, currencyType);
-        this.minimumSum = minimumSum;
-        this.onlineOpening = onlineOpening;
-    }
 
     public TimeDeposit() {
     }
