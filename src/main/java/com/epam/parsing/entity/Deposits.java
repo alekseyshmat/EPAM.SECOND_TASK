@@ -1,13 +1,15 @@
-package com.epam.parsing.storage;
+package com.epam.parsing.entity;
 
 import com.epam.parsing.entity.Deposit;
 
+import javax.xml.bind.annotation.XmlElement;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Deposits {
 
-    private List<Deposit> listOfDeposits = new ArrayList<Deposit>();
+    @XmlElement(name ="deposits")
+    private List<Deposit> listOfDeposits;
 
     public Deposits() {
     }

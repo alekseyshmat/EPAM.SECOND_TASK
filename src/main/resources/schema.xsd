@@ -1,0 +1,50 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://example.com/deposits"
+        xmlns:tns="http://example.com/deposits"
+        elementFormDefault="qualified">
+
+    <element name="deposit" type="tns:Deposit" abstract="true"/>
+    <element name="savingDeposit" type="tns:SavingDeposit" substitutionGroup="tns:deposit"/>
+    <element name="timeDeposit" type="tns:TimeDeposit" substitutionGroup="tns:deposit"/>
+
+    <element name="deposits">
+        <complexType>
+            <sequence>
+                <element ref="tns:deposit" minOccurs="2" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="Deposit">
+        <sequence>
+            <element name="nameOfBank" type="string"/>
+            <element name="country" type="string"/>
+            <element name="profitability" type="double"/>
+            <element name="timeConstraints" type="int"/>
+            <element name="currencyType" type="string"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="SavingDeposit">
+        <complexContent>
+            <extension base="tns:Deposit">
+                <sequence>
+                    <element name="capitalization" type="double"/>
+                    <element name="cashOut" type="boolean"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="TimeDeposit">
+        <complexContent>
+            <extension base="tns:Deposit">
+                <sequence>
+                    <element name="minimumSize" type="double"/>
+                    <element name="onlineOpening" type="boolean"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+</schema>

@@ -1,11 +1,18 @@
 package com.epam.parsing.entity;
 
+import javax.xml.bind.annotation.XmlElement;
+
 public abstract class Deposit {
 
+    @XmlElement(name = "name")
     private String nameOfBank;
+    @XmlElement(name = "country")
     private String country;
+    @XmlElement(name = "profitability")
     private double profitability;
+    @XmlElement(name = "timeConstraints")
     private int timeConstraints;
+    @XmlElement(name = "currencyType")
     private String currencyType;
 
     public Deposit(String nameOfBank, String country, double profitability, int timeConstraints, String currencyType) {

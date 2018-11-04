@@ -1,14 +1,18 @@
 package com.epam.parsing.entity;
 
+import javax.xml.bind.annotation.XmlElement;
+
 public class TimeDeposit extends Deposit {
 
+    @XmlElement(name = "minimumSum")
     private double minimumSum;
-    private boolean isOnlineOpening;
+    @XmlElement(name = "onlineOpening")
+    private boolean onlineOpening;
 
-    public TimeDeposit(String nameOfBank, String country, double profitability, int timeConstraints, String currencyType, double minimumSum, boolean isOnlineOpening) {
+    public TimeDeposit(String nameOfBank, String country, double profitability, int timeConstraints, String currencyType, double minimumSum, boolean onlineOpening) {
         super(nameOfBank, country, profitability, timeConstraints, currencyType);
         this.minimumSum = minimumSum;
-        this.isOnlineOpening = isOnlineOpening;
+        this.onlineOpening = onlineOpening;
     }
 
     public double getMinimumSum() {
@@ -20,11 +24,11 @@ public class TimeDeposit extends Deposit {
     }
 
     public boolean isOnlineOpening() {
-        return isOnlineOpening;
+        return onlineOpening;
     }
 
     public void setOnlineOpening(boolean onlineOpening) {
-        isOnlineOpening = onlineOpening;
+        this.onlineOpening = onlineOpening;
     }
 
     //TODO ADD EQUALS AND HASHCODE

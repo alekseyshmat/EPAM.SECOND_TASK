@@ -1,14 +1,13 @@
 <?xml  version="1.0"  encoding="UTF-8"?>
 <deposits>
-    <deposit>
-        <nameOfBank></nameOfBank>
-        <country></country>
-        <type></type>
-        <currencyType></currencyType>
-        <profitability></profitability>
-        <timeConstraints></timeConstraints>
-    </deposit>
-
-
-
+    <TimeDeposit>
+        <nameOfBank>Alfa</nameOfBank>
+        <country>Belarus</country>
+        <type>SavingDeposit</type>
+        <profitability>25</profitability>
+        <timeConstraints>30</timeConstraints>
+        <currencyType>USD</currencyType>
+        <minimumSize>3.0</minimumSize>
+        <onlineOpening>true</onlineOpening>
+    </TimeDeposit>
 </deposits>
