@@ -1,4 +1,4 @@
-package com.epam.parsing.parser;
+package com.epam.parsing.handler;
 
 import com.epam.parsing.entity.Deposit;
 import com.epam.parsing.entity.DepositEnum;
@@ -23,7 +23,7 @@ public class DepositHandler extends DefaultHandler {
 
     public DepositHandler() {
         deposits = new ArrayList<Deposit>();
-        withText = EnumSet.range(DepositEnum.NAMEOFBANK, DepositEnum.ONLINEOPENING);
+        withText = EnumSet.range(DepositEnum.NAMEOFBANK, DepositEnum.MINIMUMSUM);
     }
 
     public List<Deposit> getDeposits() {
@@ -89,7 +89,7 @@ public class DepositHandler extends DefaultHandler {
                     boolean cashOut = Boolean.parseBoolean(characters);
                     ((SavingDeposit) currentDeposit).setCashOut(cashOut);
                     break;
-                case MINIMUMSIZE:
+                case MINIMUMSUM:
                     double minimumSum = Double.parseDouble(characters);
                     ((TimeDeposit) currentDeposit).setMinimumSum(minimumSum);
                     break;
@@ -97,12 +97,14 @@ public class DepositHandler extends DefaultHandler {
                     boolean onlineOpening = Boolean.parseBoolean(characters);
                     ((TimeDeposit) currentDeposit).setOnlineOpening(onlineOpening);
                     break;
+                case DEPOSITS:
+                    break;
                 default:
                     throw new EnumConstantNotPresentException(currentEnum.getDeclaringClass(), currentEnum.name());
 
             }
         }
-        currentDeposit = null;
+        currentEnum = null;
     }
 
     @Override

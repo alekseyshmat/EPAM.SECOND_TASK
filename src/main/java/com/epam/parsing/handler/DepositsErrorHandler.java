@@ -1,4 +1,4 @@
-package com.epam.parsing.parser;
+package com.epam.parsing.handler;
 
 import org.xml.sax.helpers.DefaultHandler;
 

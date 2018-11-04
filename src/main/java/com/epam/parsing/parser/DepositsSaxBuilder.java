@@ -1,6 +1,7 @@
 package com.epam.parsing.parser;
 
 import com.epam.parsing.entity.Deposit;
+import com.epam.parsing.handler.DepositHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -28,7 +29,7 @@ public class DepositsSaxBuilder implements Parser {
         return depositHandler.getDeposits();
     }
 
-    public List<Deposit> parer(String path) {
+    public List<Deposit> parser(String path) {
         return buildListDeposits(path);
     }
 }

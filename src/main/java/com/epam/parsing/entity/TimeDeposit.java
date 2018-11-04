@@ -16,7 +16,6 @@ public class TimeDeposit extends Deposit {
     }
 
     public TimeDeposit() {
-        super();
     }
 
     public double getMinimumSum() {

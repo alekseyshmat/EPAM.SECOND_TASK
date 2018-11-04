@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface Parser {
 
-    List<Deposit> parer(String path) throws ParserException;
+    List<Deposit> parser(String path) throws ParserException;
 }

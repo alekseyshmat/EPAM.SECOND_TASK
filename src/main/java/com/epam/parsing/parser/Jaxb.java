@@ -11,7 +11,7 @@ import java.io.File;
 import java.util.List;
 
 public class Jaxb implements Parser {
-    public List<Deposit> parer(String path) throws ParserException {
+    public List<Deposit> parser(String path) throws ParserException {
         File file = new File("banks.xml");
 
         JAXBContext jaxbContext = null;
