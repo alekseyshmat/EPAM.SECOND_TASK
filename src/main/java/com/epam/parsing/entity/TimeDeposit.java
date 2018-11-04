@@ -15,6 +15,10 @@ public class TimeDeposit extends Deposit {
         this.onlineOpening = onlineOpening;
     }
 
+    public TimeDeposit() {
+        super();
+    }
+
     public double getMinimumSum() {
         return minimumSum;
     }

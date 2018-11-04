@@ -15,6 +15,10 @@ public class SavingDeposit extends Deposit {
         this.cashOut = cashOut;
     }
 
+    public SavingDeposit() {
+
+    }
+
     public boolean isCashOut() {
         return cashOut;
     }

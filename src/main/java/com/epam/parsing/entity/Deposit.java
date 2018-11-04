@@ -23,6 +23,10 @@ public abstract class Deposit {
         this.currencyType = currencyType;
     }
 
+    public Deposit() {
+
+    }
+
     public String getNameOfBank() {
         return nameOfBank;
     }
