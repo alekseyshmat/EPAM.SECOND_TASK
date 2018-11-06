@@ -15,7 +15,7 @@ import java.util.List;
 public class DepositsSaxBuilder implements Parser {
     private static final Logger LOGGER = LogManager.getLogger();
 
-    public List<Deposit> buildListDeposits(String path) {
+    private List<Deposit> buildListDeposits(String path) {
         DepositHandler depositHandler = new DepositHandler();
         try {
             XMLReader reader = XMLReaderFactory.createXMLReader();
