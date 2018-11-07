@@ -1,12 +1,8 @@
 <?xml version="1.0"  encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://example.com/deposits"
+        targetNamespace ="http://example.com/deposits"
         xmlns:tns="http://example.com/deposits"
         elementFormDefault="qualified">
-
-    <element name="deposit" type="tns:Deposit" abstract="true"/>
-    <element name="savingDeposit" type="tns:SavingDeposit" substitutionGroup="tns:deposit"/>
-    <element name="timeDeposit" type="tns:TimeDeposit" substitutionGroup="tns:deposit"/>
 
     <element name="deposits">
         <complexType>
@@ -17,6 +13,10 @@
             </sequence>
         </complexType>
     </element>
+
+    <element name="deposit" type="tns:Deposit" abstract="true"/>
+    <element name="savingDeposit" type="tns:SavingDeposit" substitutionGroup="tns:deposit"/>
+    <element name="timeDeposit" type="tns:TimeDeposit" substitutionGroup="tns:deposit"/>
 
     <complexType name="Deposit">
         <sequence>
@@ -49,4 +49,5 @@
             </extension>
         </complexContent>
     </complexType>
+
 </schema>

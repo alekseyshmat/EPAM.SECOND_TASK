@@ -1,8 +1,5 @@
 <?xml  version="1.0"  encoding="UTF-8"?>
-<deposits xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xmlns="http://www.example.com/banks"
-          xsi:schemaLocation="http://www.example.com/deposits  schema.xsd">
-
+<deposits xmlns="http://www.example.com/banks">
     <TimeDeposit>
         <nameOfBank>Alfa</nameOfBank>
         <country>Belarus</country>

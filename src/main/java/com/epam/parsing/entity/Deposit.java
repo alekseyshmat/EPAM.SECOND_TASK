@@ -38,7 +38,6 @@ public abstract class Deposit {
     }
 
     public Deposit() {
-
     }
 
     public String getNameOfBank() {
