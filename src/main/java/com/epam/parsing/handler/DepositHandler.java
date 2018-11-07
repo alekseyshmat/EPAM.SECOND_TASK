@@ -101,7 +101,6 @@ public class DepositHandler extends DefaultHandler {
                     break;
                 default:
                     throw new EnumConstantNotPresentException(currentEnum.getDeclaringClass(), currentEnum.name());
-
             }
         }
         currentEnum = null;

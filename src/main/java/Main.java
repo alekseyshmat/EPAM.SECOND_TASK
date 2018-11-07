@@ -1,22 +1,27 @@
 import com.epam.parsing.entity.Deposit;
-import com.epam.parsing.entity.TimeDeposit;
 import com.epam.parsing.exception.ParserException;
-import com.epam.parsing.parser.DepositsDomBuilder;
-import com.epam.parsing.parser.DepositsSaxBuilder;
-import com.epam.parsing.parser.Jaxb;
+import com.epam.parsing.factory.CreateXmlParser;
+import com.epam.parsing.parser.JaxbParser;
+import com.epam.parsing.parser.SaxParser;
 
+import java.util.List;
 
 public class Main {
+    private static final String PATH = "src/test/resources/deposits.xml";
 
     public static void main(String[] args) {
-       /* DepositsSaxBuilder depositsSaxBuilder = new DepositsSaxBuilder();
+
+        /*CreateXmlParser createXmlParser = new CreateXmlParser();
+        createXmlParser.createDeposits("SAXPARSER");
+
+        SaxParser depositsSaxBuilder = new SaxParser();
         for (Deposit d : depositsSaxBuilder.parser("src/test/resources/banks.xml")) {
             System.out.println(d.getCountry());
             System.out.println(d.getNameOfBank());
             System.out.println(d.getProfitability());
-        }
-
-        DepositsDomBuilder depositsDomBuilder = new DepositsDomBuilder();
+        }*/
+/*
+        DomParser depositsDomBuilder = new DomParser();
         for (Deposit d : depositsDomBuilder.parser("src/test/resources/banks.xml")) {
             System.out.println(d.getCountry());
             System.out.println(d.getNameOfBank());
@@ -25,9 +30,14 @@ public class Main {
 
         }*/
 
-        Jaxb jaxb = new Jaxb();
         try {
-            jaxb.parser("src/test/resources/banks.xml");
+            JaxbParser jaxbParser = new JaxbParser();
+            List<Deposit> depositList = jaxbParser.parser(PATH);
+            for (Deposit d : depositList) {
+                System.out.println(d.getCountry());
+                System.out.println(d.getNameOfBank());
+                System.out.println(d.getProfitability());
+            }
         } catch (ParserException e) {
             e.printStackTrace();
         }

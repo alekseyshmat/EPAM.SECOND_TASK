@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 
-public class DepositsSaxBuilder implements Parser {
+public class SaxParser implements Parser {
     private static final Logger LOGGER = LogManager.getLogger();
 
     private List<Deposit> buildListDeposits(String path) {

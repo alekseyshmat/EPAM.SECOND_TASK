@@ -15,7 +15,6 @@ public class TimeDeposit extends Deposit {
     @XmlElement(name = "onlineOpening")
     private boolean onlineOpening;
 
-
     public TimeDeposit() {
     }
 
@@ -35,5 +34,8 @@ public class TimeDeposit extends Deposit {
         this.onlineOpening = onlineOpening;
     }
 
-    //TODO ADD EQUALS AND HASHCODE
+    @Override
+    public String toString() {
+        return "Time deposit [minimum sum = " + minimumSum + "\nonline opening = " + onlineOpening + " ]";
+    }
 }

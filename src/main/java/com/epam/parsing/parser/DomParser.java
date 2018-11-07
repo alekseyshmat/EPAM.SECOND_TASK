@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DepositsDomBuilder implements Parser {
+public class DomParser implements Parser {
     private static final Logger LOGGER = LogManager.getLogger();
     private DocumentBuilder documentBuilder;
     private DepositEnum depositEnum;

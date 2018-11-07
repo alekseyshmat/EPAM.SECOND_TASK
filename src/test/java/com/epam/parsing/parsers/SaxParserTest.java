@@ -3,7 +3,7 @@ package com.epam.parsing.parsers;
 import com.epam.parsing.entity.Deposit;
 import com.epam.parsing.entity.TimeDeposit;
 import com.epam.parsing.exception.ParserException;
-import com.epam.parsing.parser.DepositsSaxBuilder;
+import com.epam.parsing.parser.SaxParser;
 import com.epam.parsing.parser.Parser;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -13,13 +13,13 @@ import java.util.List;
 
 public class SaxParserTest {
 
-    private static final String PATH = "src/test/resources/banks.xml";
+    private static final String PATH = "src/test/resources/deposits.xml";
     private static final double DELTA = 0.001;
     private Parser parser;
 
     @BeforeClass
     public void setUp() {
-        parser = new DepositsSaxBuilder();
+        parser = new SaxParser();
     }
 
     @Test

@@ -1,12 +1,17 @@
 package com.epam.parsing.entity;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.*;
 
+@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Deposit", propOrder = {
+        "nameOfBank",
+        "country",
+        "profitability",
+        "timeConstraints",
+        "currencyType"
 
+})
 @XmlSeeAlso({
         SavingDeposit.class,
         TimeDeposit.class
@@ -74,5 +79,12 @@ public abstract class Deposit {
 
     public void setCurrencyType(String currencyType) {
         this.currencyType = currencyType;
+    }
+
+    @Override
+    public String toString() {
+        return "Deposit [ nameOfBank = " + nameOfBank + "\ncountry = " + country +
+                "\nprofitability = " + profitability + "\ntime constraints = " + timeConstraints +
+                "\ncurrencyType = " + currencyType + " ]";
     }
 }

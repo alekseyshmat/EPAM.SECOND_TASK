@@ -11,7 +11,9 @@
     <element name="deposits">
         <complexType>
             <sequence>
-                <element ref="tns:deposit" minOccurs="2" maxOccurs="unbounded"/>
+                <element ref="tns:deposit"
+                         minOccurs="1"
+                         maxOccurs="unbounded"/>
             </sequence>
         </complexType>
     </element>

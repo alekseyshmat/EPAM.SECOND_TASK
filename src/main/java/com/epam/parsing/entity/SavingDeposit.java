@@ -33,5 +33,8 @@ public class SavingDeposit extends Deposit {
         this.capitalization = capitalization;
     }
 
-    //TODO ADD EQUALS AND HASHCODE
+    @Override
+    public String toString() {
+        return "Saving deposit [capitalization = " + capitalization + "\ncash out = " + cashOut + " ]";
+    }
 }
