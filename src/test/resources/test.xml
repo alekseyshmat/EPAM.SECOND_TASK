@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<deposits xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://www.example.com/deposits"
+          xsi:schemaLocation="http://www.example.com/deposits  schema.xsd">>
+
+    <timeDeposit>
+        <nameOfBank></nameOfBank>
+        <country></country>
+        <profitability></profitability>
+        <timeConstraints></timeConstraints>
+        <currencyType></currencyType>
+        <minimumSize></minimumSize>
+        <onlineOpening></onlineOpening>
+    </timeDeposit>
+</deposits>

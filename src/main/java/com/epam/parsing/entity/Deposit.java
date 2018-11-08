@@ -2,7 +2,6 @@ package com.epam.parsing.entity;
 
 import javax.xml.bind.annotation.*;
 
-@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Deposit", propOrder = {
         "nameOfBank",
@@ -17,16 +16,16 @@ import javax.xml.bind.annotation.*;
         TimeDeposit.class
 })
 public abstract class Deposit {
-
-    @XmlElement(name = "name")
+    @XmlElement(name = "name", required = true)
+    @XmlID
     private String nameOfBank;
-    @XmlElement(name = "country")
+    @XmlElement(name = "country", required = true)
     private String country;
-    @XmlElement(name = "profitability")
+    @XmlElement(name = "profitability", required = true)
     private double profitability;
-    @XmlElement(name = "timeConstraints")
+    @XmlElement(name = "timeConstraints", required = true)
     private int timeConstraints;
-    @XmlElement(name = "currencyType")
+    @XmlElement(name = "currencyType", required = true)
     private String currencyType;
 
     public Deposit(String nameOfBank, String country, double profitability, int timeConstraints, String currencyType) {

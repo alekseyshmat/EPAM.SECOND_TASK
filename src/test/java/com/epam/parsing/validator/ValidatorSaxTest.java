@@ -17,14 +17,12 @@ public class ValidatorSaxTest {
 
     @Test
     public void validatorSaxPositiveTest() {
-
         boolean actual = validatorSax.isValid(VALID_PATH);
         Assert.assertTrue(actual);
     }
 
     @Test
     public void validatorSaxNegativeTest() {
-
         boolean actual = validatorSax.isValid(INVALID_PATH);
         Assert.assertFalse(actual);
     }

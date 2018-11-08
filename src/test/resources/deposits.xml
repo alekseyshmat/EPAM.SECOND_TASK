@@ -3,7 +3,7 @@
           xmlns="http://www.example.com/deposits"
           xsi:schemaLocation="http://www.example.com/deposits  schema.xsd">
 
-    <TimeDeposit>
+    <timeDeposit>
         <nameOfBank>Alfa</nameOfBank>
         <country>Belarus</country>
         <profitability>25</profitability>
@@ -11,16 +11,16 @@
         <currencyType>USD</currencyType>
         <minimumSum>3.0</minimumSum>
         <onlineOpening>true</onlineOpening>
-    </TimeDeposit>
+    </timeDeposit>
 
-    <SavingDeposit>
+    <savingDeposit>
         <nameOfBank>IDEA</nameOfBank>
         <country>UKRAINE</country>
         <profitability>10</profitability>
         <timeConstraints>45</timeConstraints>
         <currencyType>GRN</currencyType>
         <capitalization>10</capitalization>
-        <cashout>true</cashout>
-    </SavingDeposit>
+        <cashOut>true</cashOut>
+    </savingDeposit>
 
 </deposits>

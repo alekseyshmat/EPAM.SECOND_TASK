@@ -22,7 +22,6 @@ public class JaxbParserParserTest {
         parser = new JaxbParser();
     }
 
-
     @Test
     public void jaxbParserTestPositive() {
         try {

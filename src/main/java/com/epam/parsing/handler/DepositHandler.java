@@ -22,7 +22,7 @@ public class DepositHandler extends DefaultHandler {
     private EnumSet<DepositEnum> withText;
 
     public DepositHandler() {
-        deposits = new ArrayList<Deposit>();
+        deposits = new ArrayList<>();
         withText = EnumSet.range(DepositEnum.NAMEOFBANK, DepositEnum.MINIMUMSUM);
     }
 
@@ -96,8 +96,6 @@ public class DepositHandler extends DefaultHandler {
                 case ONLINEOPENING:
                     boolean onlineOpening = Boolean.parseBoolean(characters);
                     ((TimeDeposit) currentDeposit).setOnlineOpening(onlineOpening);
-                    break;
-                case DEPOSITS:
                     break;
                 default:
                     throw new EnumConstantNotPresentException(currentEnum.getDeclaringClass(), currentEnum.name());

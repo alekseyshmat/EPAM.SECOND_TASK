@@ -1,21 +1,18 @@
 <?xml  version="1.0"  encoding="UTF-8"?>
-<deposits xmlns="http://www.example.com/banks">
-    <TimeDeposit>
+<deposits xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://www.example.com/deposits"
+          xsi:schemaLocation="http://www.example.com/deposits  schema.xsd">
+
+    <timeDeposit>
         <nameOfBank>Alfa</nameOfBank>
         <country>Belarus</country>
-        <profitability>25</profitability>
+        <profitity>25</profitity>
         <timeConstraints>30</timeConstraints>
         <currencyType>USD</currencyType>
         <minimumSum>3.0</minimumSum>
         <onlineOpening>true</onlineOpening>
         <cashout>true</cashout>
-        <nameOfBank>IDEA</nameOfBank>
-        <country>UKRAINE</country>
-    </TimeDeposit>
+    </timeDeposit>
 
-    <SavingDeposit>
-
-        <capitalization>10</capitalization>
-    </SavingDeposit>
 
 </deposits>

@@ -1,7 +1,7 @@
 <?xml version="1.0"  encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace ="http://example.com/deposits"
-        xmlns:tns="http://example.com/deposits"
+        targetNamespace ="http://www.example.com/deposits"
+        xmlns:tns="http://www.example.com/deposits"
         elementFormDefault="qualified">
 
     <element name="deposits">
@@ -28,6 +28,17 @@
         </sequence>
     </complexType>
 
+    <complexType name="TimeDeposit">
+        <complexContent>
+            <extension base="tns:Deposit">
+                <sequence>
+                    <element name="minimumSum" type="double"/>
+                    <element name="onlineOpening" type="boolean"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
     <complexType name="SavingDeposit">
         <complexContent>
             <extension base="tns:Deposit">
@@ -38,16 +49,4 @@
             </extension>
         </complexContent>
     </complexType>
-
-    <complexType name="TimeDeposit">
-        <complexContent>
-            <extension base="tns:Deposit">
-                <sequence>
-                    <element name="minimumSize" type="double"/>
-                    <element name="onlineOpening" type="boolean"/>
-                </sequence>
-            </extension>
-        </complexContent>
-    </complexType>
-
 </schema>

@@ -1,9 +1,9 @@
 package com.epam.parsing.entity;
 
 public enum DepositEnum {
+    DEPOSITS("deposits"),
     NAMEOFBANK("nameOfBank"),
     COUNTRY("country"),
-    DEPOSITS("deposits"),
     PROFITABILITY("profitability"),
     TIMECONSTRAINTS("timeConstraints"),
     CURRENCYTYPE("currencyType"),

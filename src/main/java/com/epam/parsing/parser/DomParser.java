@@ -44,13 +44,13 @@ public class DomParser implements Parser {
             Document document = documentBuilder.parse(path);
 
             Element root = document.getDocumentElement();
-            NodeList depositsList = root.getElementsByTagName("TimeDeposit");
+            NodeList depositsList = root.getElementsByTagName("timeDeposit");
             for (int i = 0; i < depositsList.getLength(); i++) {
                 Element depositElement = (Element) depositsList.item(i);
                 Deposit deposit = buildTimeDeposit(depositElement);
                 deposits.add(deposit);
             }
-            depositsList = root.getElementsByTagName("SavingDeposit");
+            depositsList = root.getElementsByTagName("savingDeposit");
             for (int i = 0; i < depositsList.getLength(); i++) {
                 Element depositElement = (Element) depositsList.item(i);
                 Deposit deposit = buildSavingDeposit(depositElement);
@@ -59,9 +59,9 @@ public class DomParser implements Parser {
         } catch (IOException ex) {
             LOGGER.error("File error or I/O error: " + ex.getMessage(), ex);
         } catch (SAXException e) {
-            e.printStackTrace();
+            LOGGER.error("Parsing fail: " + e.getMessage(), e);
         } catch (ParserException e) {
-            e.printStackTrace();
+            LOGGER.error("Parsing failure: " + e.getMessage(), e);
         }
         return deposits;
     }
@@ -110,7 +110,7 @@ public class DomParser implements Parser {
         double capitalization = Double.parseDouble(getElementTextContent(depositElement, "capitalization"));
         deposit.setCapitalization(capitalization);
 
-        boolean cashOut = Boolean.parseBoolean(getElementTextContent(depositElement, "cashout"));
+        boolean cashOut = Boolean.parseBoolean(getElementTextContent(depositElement, "cashOut"));
         deposit.setCashOut(cashOut);
 
         return deposit;

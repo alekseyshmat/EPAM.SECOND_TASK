@@ -22,18 +22,17 @@ public class ValidatorSax {
     private static final String XSD_PATH = "src/main/resources/schema.xsd";
 
     public boolean isValid(String path) {
-        SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-
         try {
+            SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
             Schema schema = factory.newSchema(new File(XSD_PATH));
             Validator validator = schema.newValidator();
             Source source = new StreamSource(path);
-            DepositsErrorHandler dh = new DepositsErrorHandler();
-            validator.setErrorHandler(dh);
             validator.validate(source);
             return true;
-        } catch (SAXException | IOException e) {
-            e.printStackTrace();
+        } catch (SAXException e) {
+            LOGGER.error("Validation " + path + " is not valid because " + e.getMessage());
+        } catch (IOException e) {
+            LOGGER.error(path + " is not valid because " + e.getMessage());
         }
         return false;
     }
