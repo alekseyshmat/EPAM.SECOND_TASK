@@ -1,17 +1,16 @@
 package com.epam.parsing.entity;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SavingDeposit")
 public class SavingDeposit extends Deposit {
 
     @XmlElement(name = "capitalization")
+    @XmlSchemaType(name = "double")
     private double capitalization;
     @XmlElement(name = "cashOut")
+    @XmlSchemaType(name = "boolean")
     private boolean cashOut;
 
     public SavingDeposit() {
@@ -35,6 +34,6 @@ public class SavingDeposit extends Deposit {
 
     @Override
     public String toString() {
-        return "Saving deposit [capitalization = " + capitalization + "\ncash out = " + cashOut + " ]";
+        return "Saving deposit: \n[capitalization = " + capitalization + "\ncash out = " + cashOut + " ]\n";
     }
 }

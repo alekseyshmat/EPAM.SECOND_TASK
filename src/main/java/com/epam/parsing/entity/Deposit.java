@@ -16,25 +16,30 @@ import javax.xml.bind.annotation.*;
         TimeDeposit.class
 })
 public abstract class Deposit {
-    @XmlElement(name = "name", required = true)
-    @XmlID
+    @XmlElement(name = "nameOfBank", required = true)
+//    @XmlID
+    @XmlSchemaType(name = "string")
     private String nameOfBank;
     @XmlElement(name = "country", required = true)
+    @XmlSchemaType(name = "string")
     private String country;
     @XmlElement(name = "profitability", required = true)
+    @XmlSchemaType(name = "double")
     private double profitability;
     @XmlElement(name = "timeConstraints", required = true)
+    @XmlSchemaType(name = "int")
     private int timeConstraints;
     @XmlElement(name = "currencyType", required = true)
+    @XmlSchemaType(name = "string")
     private String currencyType;
 
-    public Deposit(String nameOfBank, String country, double profitability, int timeConstraints, String currencyType) {
+  /*  public Deposit(String nameOfBank, String country, double profitability, int timeConstraints, String currencyType) {
         this.nameOfBank = nameOfBank;
         this.country = country;
         this.profitability = profitability;
         this.timeConstraints = timeConstraints;
         this.currencyType = currencyType;
-    }
+    }*/
 
     public Deposit() {
     }

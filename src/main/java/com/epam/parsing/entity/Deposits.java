@@ -6,20 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-/*@XmlType(propOrder = {
-        "deposit"
-})*/
+
 @XmlRootElement(name = "deposits")
 public class Deposits {
-
-//    @XmlElementRef(name = "deposit", namespace = "http://www.example.com/deposit")
-
-
     public Deposits() {
-        listOfDeposits = new ArrayList<>();
+        depositList = new ArrayList<>();
     }
 
-    protected List<JAXBElement<? extends Deposit>> deposit;
+    private List<Deposit> depositList;
+
+    @XmlElementRef(name = "deposit", namespace = "http://www.example.com/deposits", type = JAXBElement.class)
+    private List<JAXBElement<? extends Deposit>> deposit;
 
     public List<JAXBElement<? extends Deposit>> getDeposit() {
         if (deposit == null) {
@@ -27,25 +24,21 @@ public class Deposits {
         }
         return this.deposit;
     }
-    
-    @XmlElementWrapper(name = "listOfDeposits")
-    private List<Deposit> listOfDeposits;
 
-    public List<Deposit> getListOfDeposits() {
-        return listOfDeposits;
+    public void addList() {
+        for (JAXBElement element : getDeposit()) {
+            depositList.add((Deposit) element.getValue());
+        }
     }
 
-    public boolean add(Deposit deposit) {
-        return listOfDeposits.add(deposit);
-    }
-
-    public void setListOfDeposits(List<Deposit> listOfDeposits) {
-        this.listOfDeposits = listOfDeposits;
+    public List<Deposit> getDepositList() {
+        return depositList;
     }
 
     @Override
     public String toString() {
-        return "Deposits[listOfDeposits =" + listOfDeposits + "]";
+        return "Deposits[listOfDeposits =" + deposit + "]";
     }
+
 
 }

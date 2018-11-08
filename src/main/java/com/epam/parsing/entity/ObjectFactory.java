@@ -9,7 +9,7 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _Deposit_QNAME =
-            new QName("http://www.example.com/deposits", "Deposit");
+            new QName("http://www.example.com/deposits", "deposit");
     private final static QName _TimeDeposit_QNAME =
             new QName("http://www.example.com/deposits", "timeDeposit");
     private final static QName _SavingDeposit_QNAME =
@@ -31,7 +31,8 @@ public class ObjectFactory {
         return new SavingDeposit();
     }
 
-    @XmlElementDecl(namespace = "http://www.example.com/deposits", name = "Deposit")
+    
+    @XmlElementDecl(namespace = "http://www.example.com/deposits", name = "deposit")
 
     public JAXBElement<Deposit> createDeposit(Deposit value) {
         return new JAXBElement<Deposit>(_Deposit_QNAME, Deposit.class, null, value);

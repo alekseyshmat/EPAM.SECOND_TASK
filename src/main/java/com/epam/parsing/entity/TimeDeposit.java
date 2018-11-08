@@ -36,6 +36,6 @@ public class TimeDeposit extends Deposit {
 
     @Override
     public String toString() {
-        return "Time deposit [minimum sum = " + minimumSum + "\nonline opening = " + onlineOpening + " ]";
+        return "Time deposit: \n[minimum sum = " + minimumSum + "\nonline opening = " + onlineOpening + " ]\n";
     }
 }
