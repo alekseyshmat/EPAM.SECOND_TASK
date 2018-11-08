@@ -1,3 +1,6 @@
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://www.example.com/deposits",
-        elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+@XmlSchema(namespace = "http://www.example.com/deposits", elementFormDefault = XmlNsForm.QUALIFIED)
+
 package com.epam.parsing.entity;
+
+import javax.xml.bind.annotation.XmlNsForm;
+import javax.xml.bind.annotation.XmlSchema;

@@ -33,14 +33,6 @@ public abstract class Deposit {
     @XmlSchemaType(name = "string")
     private String currencyType;
 
-  /*  public Deposit(String nameOfBank, String country, double profitability, int timeConstraints, String currencyType) {
-        this.nameOfBank = nameOfBank;
-        this.country = country;
-        this.profitability = profitability;
-        this.timeConstraints = timeConstraints;
-        this.currencyType = currencyType;
-    }*/
-
     public Deposit() {
     }
 

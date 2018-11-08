@@ -1,3 +1,4 @@
+
 package com.epam.parsing.entity;
 
 import javax.xml.bind.JAXBElement;

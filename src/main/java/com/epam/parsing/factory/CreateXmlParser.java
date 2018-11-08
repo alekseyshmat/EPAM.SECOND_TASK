@@ -9,14 +9,14 @@ public class CreateXmlParser {
 
     private ParserList parserList;
 
-    public Parser createDeposits(String parser) {
-        ParserList parserName = ParserList.valueOf(parser.toUpperCase());
+    public Parser createDeposits(String typeOfParser) {
+        ParserList parserName = ParserList.valueOf(typeOfParser.toUpperCase());
         switch (parserName) {
-            case SAXPARSER:
+            case SAX:
                 return new SaxParser();
-            case DOMPARSER:
+            case DOM:
                 return new DomParser();
-            case JAXBPARSER:
+            case JAXB:
                 return new JaxbParser();
             default:
                 throw new EnumConstantNotPresentException(
