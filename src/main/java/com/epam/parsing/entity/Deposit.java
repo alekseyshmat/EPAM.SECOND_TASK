@@ -43,7 +43,11 @@ public abstract class Deposit {
     }
 
     public String getBankId() {
-        return bankId;
+        if (bankId == null) {
+            return "bankId";
+        } else {
+            return bankId;
+        }
     }
 
     public void setBankId(String bankId) {

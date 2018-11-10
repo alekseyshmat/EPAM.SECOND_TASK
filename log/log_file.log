@@ -307,3 +307,20 @@
 2018-11-11 00:28:50,957 INFO c.e.p.h.DepositHandler [main] Choose saving deposit 
 2018-11-11 00:28:50,958 INFO c.e.p.h.DepositHandler [main] Parsing ended 
 2018-11-11 00:28:51,699 ERROR c.e.p.v.ValidatorSax [main] Validation src/test/resources/invalidFile.xml is not valid because cvc-complex-type.4: Attribute 'bankId' must appear on element 'timeDeposit'. 
+2018-11-11 00:34:42,737 INFO c.e.p.h.DepositHandler [main] Parsing started 
+2018-11-11 00:34:42,749 INFO c.e.p.h.DepositHandler [main] Choose time deposit 
+2018-11-11 00:34:42,763 INFO c.e.p.h.DepositHandler [main] Choose saving deposit 
+2018-11-11 00:34:42,764 INFO c.e.p.h.DepositHandler [main] Choose time deposit 
+2018-11-11 00:34:42,765 INFO c.e.p.h.DepositHandler [main] Choose saving deposit 
+2018-11-11 00:34:42,765 INFO c.e.p.h.DepositHandler [main] Choose saving deposit 
+2018-11-11 00:34:42,766 INFO c.e.p.h.DepositHandler [main] Parsing ended 
+2018-11-11 00:34:43,566 ERROR c.e.p.v.ValidatorSax [main] Validation src/test/resources/invalidFile.xml is not valid because src-attribute.2: : The property 'default' is present in attribute 'bankId', so the value of 'use' must be 'optional'. 
+2018-11-11 00:34:43,607 ERROR c.e.p.v.ValidatorSax [main] Validation src/test/resources/deposits.xml is not valid because src-attribute.2: : The property 'default' is present in attribute 'bankId', so the value of 'use' must be 'optional'. 
+2018-11-11 00:35:49,601 INFO c.e.p.h.DepositHandler [main] Parsing started 
+2018-11-11 00:35:49,609 INFO c.e.p.h.DepositHandler [main] Choose time deposit 
+2018-11-11 00:35:49,611 INFO c.e.p.h.DepositHandler [main] Choose saving deposit 
+2018-11-11 00:35:49,612 INFO c.e.p.h.DepositHandler [main] Choose time deposit 
+2018-11-11 00:35:49,623 INFO c.e.p.h.DepositHandler [main] Choose saving deposit 
+2018-11-11 00:35:49,624 INFO c.e.p.h.DepositHandler [main] Choose saving deposit 
+2018-11-11 00:35:49,625 INFO c.e.p.h.DepositHandler [main] Parsing ended 
+2018-11-11 00:35:50,248 ERROR c.e.p.v.ValidatorSax [main] Validation src/test/resources/invalidFile.xml is not valid because cvc-complex-type.2.4.a: Invalid content was found starting with element 'profitity'. One of '{"http://www.example.com/deposits":profitability}' is expected. 
