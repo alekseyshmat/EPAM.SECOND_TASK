@@ -30,7 +30,7 @@ public class SaxParserTest {
 
         Assert.assertEquals(timeDeposit.getClass(), TimeDeposit.class);
         Assert.assertEquals(timeDeposit.getNameOfBank(), "AlfaBank");
-        Assert.assertEquals(timeDeposit.getCountry(), "Belarus");
+        Assert.assertEquals(timeDeposit.getCountry().value(), "Belarus");
         Assert.assertEquals(timeDeposit.getTimeConstraints(), 30.0, DELTA);
         Assert.assertEquals(timeDeposit.getProfitability(), 25.0, DELTA);
         Assert.assertEquals(timeDeposit.getCurrencyType(), "USD");

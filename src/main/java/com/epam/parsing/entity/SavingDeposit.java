@@ -6,11 +6,11 @@ import javax.xml.bind.annotation.*;
 @XmlType(name = "SavingDeposit")
 public class SavingDeposit extends Deposit {
 
-    @XmlElement(name = "capitalization")
+    @XmlElement(name = "capitalization", required = true)
     @XmlSchemaType(name = "double")
     private double capitalization;
 
-    @XmlElement(name = "cashOut")
+    @XmlElement(name = "cashOut", required = true)
     @XmlSchemaType(name = "boolean")
     private boolean cashOut;
 

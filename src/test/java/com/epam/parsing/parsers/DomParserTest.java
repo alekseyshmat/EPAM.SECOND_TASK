@@ -30,7 +30,7 @@ public class DomParserTest {
         TimeDeposit timeDeposit = (TimeDeposit) depositList.get(1);
 
         Assert.assertEquals(timeDeposit.getNameOfBank(), "Belarusbank");
-        Assert.assertEquals(timeDeposit.getCountry(), "Belarus");
+        Assert.assertEquals(timeDeposit.getCountry().value(), "Belarus");
         Assert.assertEquals(timeDeposit.getProfitability(), 9.5, DELTA);
         Assert.assertEquals(timeDeposit.getTimeConstraints(), 65);
         Assert.assertEquals(timeDeposit.getCurrencyType(), "BYN");

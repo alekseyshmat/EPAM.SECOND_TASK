@@ -1,9 +1,6 @@
 package com.epam.parsing.handler;
 
-import com.epam.parsing.entity.Deposit;
-import com.epam.parsing.entity.DepositEnum;
-import com.epam.parsing.entity.SavingDeposit;
-import com.epam.parsing.entity.TimeDeposit;
+import com.epam.parsing.entity.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.Attributes;
@@ -69,7 +66,7 @@ public class DepositHandler extends DefaultHandler {
                     currentDeposit.setNameOfBank(characters);
                     break;
                 case COUNTRY:
-                    currentDeposit.setCountry(characters);
+                    currentDeposit.setCountry(CountryEnum.fromValue(characters));
                     break;
                 case PROFITABILITY:
                     double profitability = Double.parseDouble(characters);

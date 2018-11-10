@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Demo Suite">
+
+    <test name="Dom parser test">
+        <classes>
+            <class name="com.epam.parsing.parsers.DomParserTest"/>
+        </classes>
+    </test>
+
+    <test name="Sax parser test">
+        <classes>
+            <class name="com.epam.parsing.parsers.SaxParserTest"/>
+        </classes>
+    </test>
+
+    <test name="Jaxb parser test">
+        <classes>
+            <class name="com.epam.parsing.parsers.JaxbParserParserTest"/>
+        </classes>
+    </test>
+
+    <test name="Validation test">
+        <classes>
+            <class name="com.epam.parsing.validator.ValidatorSaxTest"/>
+        </classes>
+    </test>
+</suite>

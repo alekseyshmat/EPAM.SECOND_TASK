@@ -17,8 +17,7 @@ public abstract class Deposit {
     private String nameOfBank;
 
     @XmlElement(name = "country", required = true)
-    @XmlSchemaType(name = "string")
-    private String country;
+    private CountryEnum country;
 
     @XmlElement(name = "profitability", required = true)
     @XmlSchemaType(name = "double")
@@ -43,11 +42,11 @@ public abstract class Deposit {
         this.nameOfBank = nameOfBank;
     }
 
-    public String getCountry() {
+    public CountryEnum getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(CountryEnum country) {
         this.country = country;
     }
 

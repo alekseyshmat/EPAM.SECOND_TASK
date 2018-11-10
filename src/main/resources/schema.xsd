@@ -21,7 +21,7 @@
     <complexType name="Deposit">
         <sequence>
             <element name="nameOfBank" type="string"/>
-            <element name="country" type="string"/>
+            <element name="country" type="tns:Country"/>
             <element name="profitability" type="double"/>
             <element name="timeConstraints" type="int"/>
             <element name="currencyType" type="string"/>
@@ -49,4 +49,19 @@
             </extension>
         </complexContent>
     </complexType>
+
+    <simpleType name="Country">
+        <restriction base="string">
+            <enumeration value="Belarus"/>
+            <enumeration value="Russia"/>
+            <enumeration value="Ukraine"/>
+            <enumeration value="Poland"/>
+            <enumeration value="Latvia"/>
+            <enumeration value="Germany"/>
+            <enumeration value="GreatBritain"/>
+            <enumeration value="USA"/>
+        </restriction>
+    </simpleType>
+
+
 </schema>

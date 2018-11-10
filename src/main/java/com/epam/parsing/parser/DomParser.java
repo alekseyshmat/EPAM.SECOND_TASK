@@ -1,5 +1,6 @@
 package com.epam.parsing.parser;
 
+import com.epam.parsing.entity.CountryEnum;
 import com.epam.parsing.entity.Deposit;
 import com.epam.parsing.entity.SavingDeposit;
 import com.epam.parsing.entity.TimeDeposit;
@@ -92,7 +93,7 @@ public class DomParser implements Parser {
         deposit.setNameOfBank(nameOfBank);
 
         String country = getElementTextContent(depositElement, COUNTRY);
-        deposit.setCountry(country);
+        deposit.setCountry(CountryEnum.fromValue(country));
 
         double profitability = Double.parseDouble(getElementTextContent(depositElement, PROFITABILITY));
         deposit.setProfitability(profitability);

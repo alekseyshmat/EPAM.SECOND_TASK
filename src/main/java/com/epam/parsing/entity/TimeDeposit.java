@@ -11,10 +11,10 @@ import java.math.BigDecimal;
 
 public class TimeDeposit extends Deposit {
 
-    @XmlElement(name = "minimumSum")
+    @XmlElement(name = "minimumSum", required = true)
     private double minimumSum;
 
-    @XmlElement(name = "onlineOpening")
+    @XmlElement(name = "onlineOpening", required = true)
     private boolean onlineOpening;
 
     public TimeDeposit() {
