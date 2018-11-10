@@ -20,7 +20,7 @@ public class CreateXmlParser {
                 return new JaxbParser();
             default:
                 throw new EnumConstantNotPresentException(
-                        parserName.getDeclaringClass(), parserName.name());
+                         parserName.getDeclaringClass(), parserName.name());
         }
     }
 }
