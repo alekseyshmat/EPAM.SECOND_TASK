@@ -39,6 +39,7 @@ public class DepositHandler extends DefaultHandler {
         if (qName.equalsIgnoreCase("TimeDeposit")) {
             LOGGER.info("Choose time deposit");
             currentDeposit = new TimeDeposit();
+            currentDeposit.setBankId(attributes.getValue(0));
         } else if (qName.equalsIgnoreCase("SavingDeposit")) {
             LOGGER.info("Choose saving deposit");
             currentDeposit = new SavingDeposit();

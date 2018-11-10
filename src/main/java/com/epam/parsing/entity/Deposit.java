@@ -1,6 +1,8 @@
 package com.epam.parsing.entity;
 
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Deposit", propOrder = {
@@ -12,6 +14,12 @@ import javax.xml.bind.annotation.*;
 })
 @XmlSeeAlso({SavingDeposit.class, TimeDeposit.class})
 public abstract class Deposit {
+
+    @XmlAttribute(name = "bankId", required = true)
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlID
+    private String bankId;
+
     @XmlElement(name = "nameOfBank", required = true)
     @XmlSchemaType(name = "string")
     private String nameOfBank;
@@ -32,6 +40,14 @@ public abstract class Deposit {
     private String currencyType;
 
     public Deposit() {
+    }
+
+    public String getBankId() {
+        return bankId;
+    }
+
+    public void setBankId(String bankId) {
+        this.bankId = bankId;
     }
 
     public String getNameOfBank() {
@@ -77,6 +93,7 @@ public abstract class Deposit {
     @Override
     public String toString() {
         return "Deposit [ " +
+                "bankId = " + bankId +
                 "nameOfBank = " + nameOfBank +
                 "\ncountry = " + country +
                 "\nprofitability = " + profitability +

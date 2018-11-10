@@ -28,6 +28,7 @@ public class JaxbParserParserTest {
             List<Deposit> depositList = parser.parser(PATH);
             TimeDeposit timeDeposit = (TimeDeposit) depositList.get(0);
 
+            Assert.assertEquals(timeDeposit.getBankId(), "BYALFA82");
             Assert.assertEquals(timeDeposit.getNameOfBank(), "AlfaBank");
             Assert.assertEquals(timeDeposit.getCountry().value(), "Belarus");
             Assert.assertEquals(timeDeposit.getTimeConstraints(), 30.0, DELTA);

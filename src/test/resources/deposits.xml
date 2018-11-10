@@ -3,7 +3,7 @@
           xmlns="http://www.example.com/deposits"
           xsi:schemaLocation="http://www.example.com/deposits  schema.xsd">
 
-    <timeDeposit>
+    <timeDeposit bankId="BYALFA82">
         <nameOfBank>AlfaBank</nameOfBank>
         <country>Belarus</country>
         <profitability>25</profitability>
@@ -13,7 +13,7 @@
         <onlineOpening>true</onlineOpening>
     </timeDeposit>
 
-    <savingDeposit>
+    <savingDeposit bankId="UAIDEA36">
         <nameOfBank>IdeaBank</nameOfBank>
         <country>Ukraine</country>
         <profitability>10</profitability>
@@ -23,7 +23,7 @@
         <cashOut>true</cashOut>
     </savingDeposit>
 
-    <timeDeposit>
+    <timeDeposit bankId="BYBEL422">
         <nameOfBank>Belarusbank</nameOfBank>
         <country>Belarus</country>
         <profitability>9.5</profitability>
@@ -33,7 +33,7 @@
         <onlineOpening>false</onlineOpening>
     </timeDeposit>
 
-    <savingDeposit>
+    <savingDeposit bankId="RUSSBER777">
         <nameOfBank>Sberbank</nameOfBank>
         <country>Russia</country>
         <profitability>15</profitability>
@@ -43,7 +43,7 @@
         <cashOut>true</cashOut>
     </savingDeposit>
 
-    <savingDeposit>
+    <savingDeposit bankId="PLSWS02">
         <nameOfBank>SwissBank</nameOfBank>
         <country>Poland</country>
         <profitability>35</profitability>

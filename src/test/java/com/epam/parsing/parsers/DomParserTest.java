@@ -29,6 +29,7 @@ public class DomParserTest {
         List<Deposit> depositList = parser.parser(PATH);
         TimeDeposit timeDeposit = (TimeDeposit) depositList.get(1);
 
+        Assert.assertEquals(timeDeposit.getBankId(), "BYBEL422");
         Assert.assertEquals(timeDeposit.getNameOfBank(), "Belarusbank");
         Assert.assertEquals(timeDeposit.getCountry().value(), "Belarus");
         Assert.assertEquals(timeDeposit.getProfitability(), 9.5, DELTA);

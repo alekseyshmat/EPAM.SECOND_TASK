@@ -5,7 +5,6 @@ import com.epam.parsing.entity.Deposit;
 import com.epam.parsing.entity.SavingDeposit;
 import com.epam.parsing.entity.TimeDeposit;
 import com.epam.parsing.exception.ParserException;
-import javafx.util.converter.BigDecimalStringConverter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Document;
@@ -18,13 +17,13 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DomParser implements Parser {
     private static final Logger LOGGER = LogManager.getLogger();
 
+    private static final String BANK_ID = "bankId";
     private static final String TIME_DEPOSIT = "timeDeposit";
     private static final String SAVING_DEPOSIT = "savingDeposit";
     private static final String NAME_OF_BANK = "nameOfBank";
@@ -89,6 +88,9 @@ public class DomParser implements Parser {
     }
 
     private void buildDeposit(Element depositElement, Deposit deposit) {
+        String bankId = depositElement.getAttribute(BANK_ID);
+        deposit.setBankId(bankId);
+
         String nameOfBank = getElementTextContent(depositElement, NAME_OF_BANK);
         deposit.setNameOfBank(nameOfBank);
 

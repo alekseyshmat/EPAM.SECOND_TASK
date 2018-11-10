@@ -1,6 +1,5 @@
 package com.epam.parsing.entity;
 
-
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlType;
 
@@ -20,7 +19,7 @@ public enum CountryEnum {
         return name();
     }
 
-    public static CountryEnum fromValue(String v) {
-        return valueOf(v);
+    public static CountryEnum fromValue(String nameOfCountry) {
+        return valueOf(nameOfCountry);
     }
 }
