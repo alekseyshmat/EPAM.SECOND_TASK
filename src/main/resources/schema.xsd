@@ -8,7 +8,7 @@
         <complexType>
             <sequence>
                 <element ref="tns:deposit"
-                         minOccurs="1"
+                         minOccurs="2"
                          maxOccurs="unbounded"/>
             </sequence>
         </complexType>

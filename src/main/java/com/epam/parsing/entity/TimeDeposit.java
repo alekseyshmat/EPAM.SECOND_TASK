@@ -4,6 +4,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import java.math.BigDecimal;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TimeDeposit")
@@ -12,6 +13,7 @@ public class TimeDeposit extends Deposit {
 
     @XmlElement(name = "minimumSum")
     private double minimumSum;
+
     @XmlElement(name = "onlineOpening")
     private boolean onlineOpening;
 
@@ -36,6 +38,8 @@ public class TimeDeposit extends Deposit {
 
     @Override
     public String toString() {
-        return "Time deposit: \n[minimum sum = " + minimumSum + "\nonline opening = " + onlineOpening + " ]\n";
+        return "Time deposit: \n[" +
+                "minimum sum = " + minimumSum +
+                "\nonline opening = " + onlineOpening + " ]\n";
     }
 }

@@ -1,4 +1,3 @@
-
 package com.epam.parsing.entity;
 
 import javax.xml.bind.JAXBElement;
@@ -40,6 +39,4 @@ public class Deposits {
     public String toString() {
         return "Deposits[listOfDeposits =" + deposit + "]";
     }
-
-
 }

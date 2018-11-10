@@ -9,6 +9,7 @@ public class SavingDeposit extends Deposit {
     @XmlElement(name = "capitalization")
     @XmlSchemaType(name = "double")
     private double capitalization;
+
     @XmlElement(name = "cashOut")
     @XmlSchemaType(name = "boolean")
     private boolean cashOut;
@@ -34,6 +35,8 @@ public class SavingDeposit extends Deposit {
 
     @Override
     public String toString() {
-        return "Saving deposit: \n[capitalization = " + capitalization + "\ncash out = " + cashOut + " ]\n";
+        return "Saving deposit: " +
+                "\n[capitalization = " + capitalization +
+                "\ncash out = " + cashOut + " ]\n";
     }
 }

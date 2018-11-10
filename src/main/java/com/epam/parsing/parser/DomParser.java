@@ -1,10 +1,10 @@
 package com.epam.parsing.parser;
 
 import com.epam.parsing.entity.Deposit;
-import com.epam.parsing.entity.DepositEnum;
 import com.epam.parsing.entity.SavingDeposit;
 import com.epam.parsing.entity.TimeDeposit;
 import com.epam.parsing.exception.ParserException;
+import javafx.util.converter.BigDecimalStringConverter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Document;
@@ -17,13 +17,27 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DomParser implements Parser {
     private static final Logger LOGGER = LogManager.getLogger();
+
+    private static final String TIME_DEPOSIT = "timeDeposit";
+    private static final String SAVING_DEPOSIT = "savingDeposit";
+    private static final String NAME_OF_BANK = "nameOfBank";
+    private static final String COUNTRY = "country";
+    private static final String PROFITABILITY = "profitability";
+    private static final String TIME_CONSTRAINTS = "timeConstraints";
+    private static final String CURRENCY_TYPE = "currencyType";
+    private static final String MINIMUM_SUM = "minimumSum";
+    private static final String ONLINE_OPENING = "onlineOpening";
+    private static final String CAPITALIZATION = "capitalization";
+    private static final String CASH_OUT = "cashOut";
+
+
     private DocumentBuilder documentBuilder;
-    private DepositEnum depositEnum;
 
     public List<Deposit> parser(String path) {
         return buildListDeposits(path);
@@ -44,13 +58,13 @@ public class DomParser implements Parser {
             Document document = documentBuilder.parse(path);
 
             Element root = document.getDocumentElement();
-            NodeList depositsList = root.getElementsByTagName("timeDeposit");
+            NodeList depositsList = root.getElementsByTagName(TIME_DEPOSIT);
             for (int i = 0; i < depositsList.getLength(); i++) {
                 Element depositElement = (Element) depositsList.item(i);
                 Deposit deposit = buildTimeDeposit(depositElement);
                 deposits.add(deposit);
             }
-            depositsList = root.getElementsByTagName("savingDeposit");
+            depositsList = root.getElementsByTagName(SAVING_DEPOSIT);
             for (int i = 0; i < depositsList.getLength(); i++) {
                 Element depositElement = (Element) depositsList.item(i);
                 Deposit deposit = buildSavingDeposit(depositElement);
@@ -74,19 +88,19 @@ public class DomParser implements Parser {
     }
 
     private void buildDeposit(Element depositElement, Deposit deposit) {
-        String nameOfBank = getElementTextContent(depositElement, "nameOfBank");
+        String nameOfBank = getElementTextContent(depositElement, NAME_OF_BANK);
         deposit.setNameOfBank(nameOfBank);
 
-        String country = getElementTextContent(depositElement, "country");
+        String country = getElementTextContent(depositElement, COUNTRY);
         deposit.setCountry(country);
 
-        double profitability = Double.parseDouble(getElementTextContent(depositElement, "profitability"));
+        double profitability = Double.parseDouble(getElementTextContent(depositElement, PROFITABILITY));
         deposit.setProfitability(profitability);
 
-        int timeConstraints = Integer.parseInt(getElementTextContent(depositElement, "timeConstraints"));
+        int timeConstraints = Integer.parseInt(getElementTextContent(depositElement, TIME_CONSTRAINTS));
         deposit.setTimeConstraints(timeConstraints);
 
-        String currencyType = getElementTextContent(depositElement, "currencyType");
+        String currencyType = getElementTextContent(depositElement, CURRENCY_TYPE);
         deposit.setCurrencyType(currencyType);
     }
 
@@ -94,10 +108,10 @@ public class DomParser implements Parser {
         TimeDeposit deposit = new TimeDeposit();
         buildDeposit(depositElement, deposit);
 
-        double minimumSum = Double.parseDouble(getElementTextContent(depositElement, "minimumSum"));
+        double minimumSum = Double.parseDouble(getElementTextContent(depositElement, MINIMUM_SUM));
         deposit.setMinimumSum(minimumSum);
 
-        boolean onlineOpening = Boolean.parseBoolean(getElementTextContent(depositElement, "onlineOpening"));
+        boolean onlineOpening = Boolean.parseBoolean(getElementTextContent(depositElement, ONLINE_OPENING));
         deposit.setOnlineOpening(onlineOpening);
 
         return deposit;
@@ -107,10 +121,10 @@ public class DomParser implements Parser {
         SavingDeposit deposit = new SavingDeposit();
         buildDeposit(depositElement, deposit);
 
-        double capitalization = Double.parseDouble(getElementTextContent(depositElement, "capitalization"));
+        double capitalization = Double.parseDouble(getElementTextContent(depositElement, CAPITALIZATION));
         deposit.setCapitalization(capitalization);
 
-        boolean cashOut = Boolean.parseBoolean(getElementTextContent(depositElement, "cashOut"));
+        boolean cashOut = Boolean.parseBoolean(getElementTextContent(depositElement, CASH_OUT));
         deposit.setCashOut(cashOut);
 
         return deposit;

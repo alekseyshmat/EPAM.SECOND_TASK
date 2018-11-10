@@ -11,7 +11,6 @@ import org.xml.sax.helpers.XMLReaderFactory;
 import java.io.IOException;
 import java.util.List;
 
-
 public class SaxParser implements Parser {
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -21,10 +20,10 @@ public class SaxParser implements Parser {
             XMLReader reader = XMLReaderFactory.createXMLReader();
             reader.setContentHandler(depositHandler);
             reader.parse(path);
-        } catch (IOException ex) {
-            LOGGER.error("File error or I/O error: " + ex.getMessage(), ex);
-        } catch (SAXException ex) {
-            LOGGER.error("Parsing failure: " + ex.getMessage(), ex);
+        } catch (IOException e) {
+            LOGGER.error("File error: " + e.getMessage(), e);
+        } catch (SAXException e) {
+            LOGGER.error("Parsing failure: " + e.getMessage(), e);
         }
         return depositHandler.getDeposits();
     }

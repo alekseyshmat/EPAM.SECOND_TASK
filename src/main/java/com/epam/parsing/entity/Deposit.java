@@ -9,26 +9,25 @@ import javax.xml.bind.annotation.*;
         "profitability",
         "timeConstraints",
         "currencyType"
-
 })
-@XmlSeeAlso({
-        SavingDeposit.class,
-        TimeDeposit.class
-})
+@XmlSeeAlso({SavingDeposit.class, TimeDeposit.class})
 public abstract class Deposit {
     @XmlElement(name = "nameOfBank", required = true)
-//    @XmlID
     @XmlSchemaType(name = "string")
     private String nameOfBank;
+
     @XmlElement(name = "country", required = true)
     @XmlSchemaType(name = "string")
     private String country;
+
     @XmlElement(name = "profitability", required = true)
     @XmlSchemaType(name = "double")
     private double profitability;
+
     @XmlElement(name = "timeConstraints", required = true)
     @XmlSchemaType(name = "int")
     private int timeConstraints;
+
     @XmlElement(name = "currencyType", required = true)
     @XmlSchemaType(name = "string")
     private String currencyType;
@@ -78,8 +77,11 @@ public abstract class Deposit {
 
     @Override
     public String toString() {
-        return "Deposit [ nameOfBank = " + nameOfBank + "\ncountry = " + country +
-                "\nprofitability = " + profitability + "\ntime constraints = " + timeConstraints +
+        return "Deposit [ " +
+                "nameOfBank = " + nameOfBank +
+                "\ncountry = " + country +
+                "\nprofitability = " + profitability +
+                "\ntime constraints = " + timeConstraints +
                 "\ncurrencyType = " + currencyType + " ]";
     }
 }

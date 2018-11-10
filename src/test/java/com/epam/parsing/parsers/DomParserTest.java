@@ -2,6 +2,7 @@ package com.epam.parsing.parsers;
 
 import com.epam.parsing.entity.Deposit;
 import com.epam.parsing.entity.SavingDeposit;
+import com.epam.parsing.entity.TimeDeposit;
 import com.epam.parsing.exception.ParserException;
 import com.epam.parsing.parser.DomParser;
 import com.epam.parsing.parser.Parser;
@@ -26,14 +27,14 @@ public class DomParserTest {
     public void domParserPositiveTest() throws ParserException {
 
         List<Deposit> depositList = parser.parser(PATH);
-        SavingDeposit savingDeposit = (SavingDeposit) depositList.get(1);
+        TimeDeposit timeDeposit = (TimeDeposit) depositList.get(1);
 
-        Assert.assertEquals(savingDeposit.getNameOfBank(), "IDEA");
-        Assert.assertEquals(savingDeposit.getCountry(), "UKRAINE");
-        Assert.assertEquals(savingDeposit.getProfitability(), 10.0, DELTA);
-        Assert.assertEquals(savingDeposit.getTimeConstraints(), 45.0, DELTA);
-        Assert.assertEquals(savingDeposit.getCurrencyType(), "GRN");
-        Assert.assertEquals(savingDeposit.getCapitalization(), 10.0, DELTA);
-        Assert.assertTrue(savingDeposit.isCashOut());
+        Assert.assertEquals(timeDeposit.getNameOfBank(), "Belarusbank");
+        Assert.assertEquals(timeDeposit.getCountry(), "Belarus");
+        Assert.assertEquals(timeDeposit.getProfitability(), 9.5, DELTA);
+        Assert.assertEquals(timeDeposit.getTimeConstraints(), 65);
+        Assert.assertEquals(timeDeposit.getCurrencyType(), "BYN");
+        Assert.assertEquals(timeDeposit.getMinimumSum(), 500.0);
+        Assert.assertFalse(timeDeposit.isOnlineOpening());
     }
 }

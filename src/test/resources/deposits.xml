@@ -4,7 +4,7 @@
           xsi:schemaLocation="http://www.example.com/deposits  schema.xsd">
 
     <timeDeposit>
-        <nameOfBank>Alfa</nameOfBank>
+        <nameOfBank>AlfaBank</nameOfBank>
         <country>Belarus</country>
         <profitability>25</profitability>
         <timeConstraints>30</timeConstraints>
@@ -14,13 +14,43 @@
     </timeDeposit>
 
     <savingDeposit>
-        <nameOfBank>IDEA</nameOfBank>
-        <country>UKRAINE</country>
+        <nameOfBank>IdeaBank</nameOfBank>
+        <country>Ukraine</country>
         <profitability>10</profitability>
         <timeConstraints>45</timeConstraints>
-        <currencyType>GRN</currencyType>
+        <currencyType>UAH</currencyType>
         <capitalization>10</capitalization>
         <cashOut>true</cashOut>
+    </savingDeposit>
+
+    <timeDeposit>
+        <nameOfBank>Belarusbank</nameOfBank>
+        <country>Belarus</country>
+        <profitability>9.5</profitability>
+        <timeConstraints>65</timeConstraints>
+        <currencyType>BYN</currencyType>
+        <minimumSum>500</minimumSum>
+        <onlineOpening>false</onlineOpening>
+    </timeDeposit>
+
+    <savingDeposit>
+        <nameOfBank>Sberbank</nameOfBank>
+        <country>Russia</country>
+        <profitability>15</profitability>
+        <timeConstraints>90</timeConstraints>
+        <currencyType>RUB</currencyType>
+        <capitalization>12</capitalization>
+        <cashOut>true</cashOut>
+    </savingDeposit>
+
+    <savingDeposit>
+        <nameOfBank>SwissBank</nameOfBank>
+        <country>Poland</country>
+        <profitability>35</profitability>
+        <timeConstraints>15</timeConstraints>
+        <currencyType>EUR</currencyType>
+        <capitalization>5</capitalization>
+        <cashOut>false</cashOut>
     </savingDeposit>
 
 </deposits>

@@ -28,12 +28,12 @@ public class JaxbParserParserTest {
             List<Deposit> depositList = parser.parser(PATH);
             TimeDeposit timeDeposit = (TimeDeposit) depositList.get(0);
 
-            Assert.assertEquals(timeDeposit.getNameOfBank(), "Alfa");
+            Assert.assertEquals(timeDeposit.getNameOfBank(), "AlfaBank");
             Assert.assertEquals(timeDeposit.getCountry(), "Belarus");
             Assert.assertEquals(timeDeposit.getTimeConstraints(), 30.0, DELTA);
             Assert.assertEquals(timeDeposit.getProfitability(), 25.0, DELTA);
             Assert.assertEquals(timeDeposit.getCurrencyType(), "USD");
-            Assert.assertEquals(timeDeposit.getMinimumSum(), 3.0, DELTA);
+            Assert.assertEquals(timeDeposit.getMinimumSum(), 3.0);
             Assert.assertTrue(timeDeposit.isOnlineOpening());
         } catch (ParserException e) {
             e.printStackTrace();
